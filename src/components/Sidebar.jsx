@@ -15,7 +15,7 @@ function FriendItem({ friend, index }) {
       <div style={{ position: 'relative', flexShrink: 0 }}>
         <img src={friend.avatar} alt={friend.name} style={{
           width: 44, height: 44, borderRadius: '50%', objectFit: 'cover',
-          border: '2px solid #fff', boxShadow: '0 2px 8px rgba(0,0,0,0.1)'
+          border: '2px solid var(--avatar-border)', boxShadow: '0 2px 8px rgba(0,0,0,0.1)'
         }} />
         <span style={{
           position: 'absolute', bottom: 1, right: 1,
@@ -41,7 +41,7 @@ export default function Sidebar({ friends }) {
 
   return (
     <aside style={{
-      width: 260, background: 'var(--sidebar-bg)',
+      width: '100%', minWidth: 260, background: 'var(--sidebar-bg)',
       borderRadius: '24px 0 0 24px', padding: '28px 16px',
       display: 'flex', flexDirection: 'column', gap: 20,
       animation: 'fadeIn 0.4s ease',
@@ -72,7 +72,7 @@ export default function Sidebar({ friends }) {
           style={{
             width:'100%', padding:'10px 12px 10px 36px',
             borderRadius: 12, border: 'none',
-            background: 'rgba(255,255,255,0.7)', fontSize: 14,
+            background: 'var(--input-bg)', fontSize: 14,
             color: 'var(--text-primary)', outline: 'none',
             backdropFilter: 'blur(6px)',
             transition: 'box-shadow 0.2s',

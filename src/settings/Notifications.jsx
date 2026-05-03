@@ -61,7 +61,7 @@ export default function Notifications() {
               <div key={label} style={{ flex:1 }}>
                 <div style={{ fontSize:12, fontWeight:600, color:'var(--text-muted)', marginBottom:6 }}>{label.toUpperCase()}</div>
                 <input type="time" defaultValue={label==='From'?'22:00':'07:00'}
-                  style={{ width:'100%', padding:'9px 12px', borderRadius:12, border:'1.5px solid #dde8f5', fontSize:14, outline:'none', fontFamily:'DM Sans,sans-serif', color:'var(--text-primary)' }} />
+                  style={{ width:'100%', padding:'9px 12px', borderRadius:12, border:'1.5px solid var(--border)', fontSize:14, outline:'none', fontFamily:'DM Sans,sans-serif', color:'var(--text-primary)', background:'var(--input-bg)' }} />
               </div>
             ))}
           </div>

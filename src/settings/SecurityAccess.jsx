@@ -47,7 +47,7 @@ function TwoFA() {
   if (!enabled) return (
     <SectionCard title="Two-Factor Authentication">
       <div style={{ display:'flex', alignItems:'center', gap:14, marginBottom:18 }}>
-        <div style={{ width:44, height:44, borderRadius:12, background:'#eaf1fb', display:'flex', alignItems:'center', justifyContent:'center' }}>
+        <div style={{ width:44, height:44, borderRadius:12, background:'var(--icon-bg)', display:'flex', alignItems:'center', justifyContent:'center' }}>
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" strokeWidth="2"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/><circle cx="12" cy="16" r="1"/></svg>
         </div>
         <div>
@@ -59,8 +59,8 @@ function TwoFA() {
         {['app','sms'].map(m => (
           <button key={m} onClick={() => setMethod(m)} style={{
             flex:1, padding:'10px', borderRadius:12, cursor:'pointer', fontFamily:'DM Sans,sans-serif', fontWeight:500, fontSize:13,
-            border: method===m ? '2px solid var(--accent)' : '1.5px solid #dde8f5',
-            background: method===m ? '#eaf1fb' : '#fff', color: method===m ? 'var(--accent)' : 'var(--text-muted)',
+            border: method===m ? '2px solid var(--accent)' : '1.5px solid var(--border)',
+            background: method===m ? 'var(--accent-dim)' : 'var(--card-bg)', color: method===m ? 'var(--accent)' : 'var(--text-muted)',
             transition:'all 0.18s',
           }}>
             {m === 'app' ? '📱 Authenticator App' : '💬 SMS'}
@@ -105,7 +105,7 @@ function Sessions() {
     <SectionCard title="Active Sessions">
       {sessions.map(s => (
         <div key={s.id} style={{ display:'flex', alignItems:'center', gap:12, padding:'12px 0', borderBottom:'1px solid #f0f6ff' }}>
-          <div style={{ width:40, height:40, borderRadius:10, background:'#eaf1fb', display:'flex', alignItems:'center', justifyContent:'center', flexShrink:0 }}>
+          <div style={{ width:40, height:40, borderRadius:10, background:'var(--icon-bg)', display:'flex', alignItems:'center', justifyContent:'center', flexShrink:0 }}>
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" strokeWidth="2">
               {s.device.includes('iPhone') ? <><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12" y2="18"/></> : <><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></>}
             </svg>

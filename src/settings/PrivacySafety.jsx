@@ -19,14 +19,14 @@ function MutedWords({ words, onAdd, onRemove }) {
         <input value={input} onChange={e => setInput(e.target.value)}
           onKeyDown={e => e.key === 'Enter' && add()}
           placeholder="Add a word or phrase..."
-          style={{ flex:1, padding:'9px 14px', borderRadius:12, border:'1.5px solid #dde8f5', fontSize:13, outline:'none', fontFamily:'DM Sans,sans-serif', color:'var(--text-primary)' }}
+          style={{ flex:1, padding:'9px 14px', borderRadius:12, border:'1.5px solid var(--input-border)', fontSize:13, outline:'none', fontFamily:'DM Sans,sans-serif', color:'var(--text-primary)' }}
           onFocus={e => e.target.style.borderColor='var(--accent)'}
-          onBlur={e => e.target.style.borderColor='#dde8f5'} />
+          onBlur={e => e.target.style.borderColor='var(--input-border)'} />
         <Btn variant="primary" onClick={add}>Add</Btn>
       </div>
       <div style={{ display:'flex', flexWrap:'wrap', gap:8 }}>
         {words.map(w => (
-          <span key={w} style={{ display:'flex', alignItems:'center', gap:5, background:'#eaf1fb', color:'var(--accent)', borderRadius:20, padding:'4px 12px', fontSize:12, fontWeight:500 }}>
+          <span key={w} style={{ display:'flex', alignItems:'center', gap:5, background:'var(--tag-bg)', color:'var(--accent)', borderRadius:20, padding:'4px 12px', fontSize:12, fontWeight:500 }}>
             {w}
             <button onClick={() => onRemove(w)} style={{ background:'none', border:'none', cursor:'pointer', color:'var(--text-muted)', fontSize:14, lineHeight:1, padding:0 }}>×</button>
           </span>
@@ -40,7 +40,7 @@ function MutedWords({ words, onAdd, onRemove }) {
 function UserListItem({ user, type, onAction }) {
   return (
     <div style={{ display:'flex', alignItems:'center', gap:12, padding:'10px 0', borderBottom:'1px solid #f0f6ff' }}>
-      <img src={`https://api.dicebear.com/7.x/avataaars/svg?seed=${user}`} alt={user} style={{ width:38, height:38, borderRadius:'50%', border:'2px solid #dde8f5' }}/>
+      <img src={`https://api.dicebear.com/7.x/avataaars/svg?seed=${user}`} alt={user} style={{ width:38, height:38, borderRadius:'50%', border:'2px solid var(--border)' }}/>
       <span style={{ flex:1, fontWeight:500, fontSize:14, color:'var(--text-primary)' }}>@{user}</span>
       <Btn variant={type === 'blocked' ? 'secondary' : 'ghost'} onClick={() => onAction(user)}>
         {type === 'blocked' ? 'Unblock' : 'Unmute'}

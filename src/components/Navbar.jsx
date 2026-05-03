@@ -40,13 +40,12 @@ export default function Navbar({ active, onNavChange }) {
       {NAV_ICONS.map(({ id, icon }, i) => {
         const isActive = active === id;
         return (
-          
           <button key={id} onClick={() => onNavChange(id)}
             style={{
               display: 'flex', alignItems: 'center', justifyContent: 'center',
-              flex: 1, height: 42, borderRadius: 12, border: 'none', cursor: 'pointer',
+              flex: 1, height: 44, borderRadius: 12, border: 'none', cursor: 'pointer',
               background: isActive ? 'var(--accent)' : 'transparent',
-              color: isActive ? '#fff' : 'var(--text-muted)',
+              color: isActive ? 'var(--text-on-accent)' : 'var(--text-muted)',
               transition: 'all 0.22s cubic-bezier(0.4,0,0.2,1)',
               transform: isActive ? 'scale(1.08)' : 'scale(1)',
               boxShadow: isActive ? '0 4px 14px rgba(59,130,246,0.35)' : 'none',

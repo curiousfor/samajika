@@ -9,7 +9,7 @@ function AvatarUpload({ avatar, onUpload }) {
       <div style={{ position:'relative', cursor:'pointer' }}
         onMouseEnter={() => setHover(true)} onMouseLeave={() => setHover(false)}
         onClick={() => ref.current.click()}>
-        <img src={avatar} alt="avatar" style={{ width:80, height:80, borderRadius:'50%', objectFit:'cover', border:'3px solid #dde8f5' }}/>
+        <img src={avatar} alt="avatar" style={{ width:80, height:80, borderRadius:'50%', objectFit:'cover', border:'3px solid var(--border)' }}/>
         <div style={{
           position:'absolute', inset:0, borderRadius:'50%', background:'rgba(59,130,246,0.55)',
           display:'flex', alignItems:'center', justifyContent:'center',
@@ -41,7 +41,7 @@ function CoverUpload() {
     <div style={{ marginBottom:24 }}>
       <div style={{ fontSize:12, fontWeight:600, color:'var(--text-muted)', letterSpacing:.5, marginBottom:8 }}>COVER PHOTO</div>
       <div style={{
-        height:110, borderRadius:14, border:'2px dashed #c8d8ee', background: cover ? `url(${cover}) center/cover` : '#eaf1fb',
+        height:110, borderRadius:14, border:'2px dashed var(--cover-dash-border)', background: cover ? `url(${cover}) center/cover` : 'var(--cover-bg)',
         display:'flex', alignItems:'center', justifyContent:'center', cursor:'pointer', overflow:'hidden', position:'relative',
       }} onClick={() => ref.current.click()}>
         {!cover && (
@@ -91,9 +91,9 @@ export default function AccountProfile() {
           <label style={{ display:'block', fontSize:12, fontWeight:600, color:'var(--text-muted)', letterSpacing:.5, marginBottom:6 }}>BIO</label>
           <textarea value={form.bio} onChange={set('bio')} maxLength={160}
             rows={3} placeholder="Tell the world about yourself..."
-            style={{ width:'100%', padding:'10px 14px', borderRadius:12, border:'1.5px solid #dde8f5', fontSize:14, color:'var(--text-primary)', background:'rgba(255,255,255,0.8)', outline:'none', resize:'none', fontFamily:'DM Sans,sans-serif', transition:'border-color 0.2s' }}
+            style={{ width:'100%', padding:'10px 14px', borderRadius:12, border:'1.5px solid var(--input-border)', fontSize:14, color:'var(--text-primary)', background:'var(--input-bg)', outline:'none', resize:'none', fontFamily:'DM Sans,sans-serif', transition:'border-color 0.2s' }}
             onFocus={e => e.target.style.borderColor='var(--accent)'}
-            onBlur={e => e.target.style.borderColor='#dde8f5'} />
+            onBlur={e => e.target.style.borderColor='var(--input-border)'} />
           <div style={{ textAlign:'right', fontSize:11, color: charLeft < 20 ? '#ef4444' : 'var(--text-muted)' }}>{charLeft} left</div>
         </div>
         <SettingInput label="WEBSITE" value={form.website} onChange={set('website')} placeholder="https://yoursite.com" type="url" />

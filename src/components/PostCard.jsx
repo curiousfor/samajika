@@ -35,7 +35,7 @@ export default function PostCard({ post, index, onLike }) {
       {/* Image */}
       <div style={{ width: 130, height: 130, flexShrink: 0, position: 'relative', overflow: 'hidden' }}>
         {!imgLoaded && (
-          <div style={{ width:'100%', height:'100%', background:'linear-gradient(135deg,#dde8f5,#c8d8ee)', display:'flex', alignItems:'center', justifyContent:'center' }}>
+          <div style={{ width:'100%', height:'100%', background:'var(--sidebar-bg)', display:'flex', alignItems:'center', justifyContent:'center' }}>
             <div style={{ width:24, height:24, border:'3px solid var(--accent)', borderTopColor:'transparent', borderRadius:'50%', animation:'spin 0.8s linear infinite' }}/>
           </div>
         )}
@@ -60,7 +60,7 @@ export default function PostCard({ post, index, onLike }) {
           </div>
         </div>
 
-        <p style={{ fontSize:12, color:'var(--text-muted)', lineHeight:1.6, borderBottom:'1px solid #e8f0f8', paddingBottom:8 }}>
+        <p style={{ fontSize:12, color:'var(--text-muted)', lineHeight:1.6, borderBottom:'1px solid var(--border-inner)', paddingBottom:8 }}>
           {post.excerpt}
         </p>
 

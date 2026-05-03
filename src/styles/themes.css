@@ -1,0 +1,181 @@
+/* ═══════════════════════════════════════════════════════════
+   PROTO THEME SYSTEM
+   Add new components using only var(--*) tokens below.
+   Never hardcode hex colors in components.
+   ═══════════════════════════════════════════════════════════ */
+
+/* ── LIGHT ─────────────────────────────────────────────────── */
+:root,
+[data-theme="light"] {
+  --app-bg:           #c8d8ee;
+  --sidebar-bg:       #dde8f5;
+  --main-bg:          #eaf1fb;
+  --card-bg:          #ffffff;
+  --card-bg-alt:      #f8fafc;
+  --modal-bg:         #ffffff;
+
+  --border:           #dde8f5;
+  --border-inner:     #e8f0f8;
+  --border-danger:    #fecaca;
+
+  --text-primary:     #1e293b;
+  --text-muted:       #64748b;
+  --text-placeholder: #94a3b8;
+  --text-on-accent:   #ffffff;
+
+  --accent:           #3b82f6;
+  --accent-dark:      #2563eb;
+  --accent-dim:       #eaf1fb;
+  --accent-shadow:    rgba(59,130,246,0.28);
+
+  --btn-secondary-bg: #eaf1fb;
+  --btn-ghost-border: #dde8f5;
+  --input-bg:         rgba(255,255,255,0.8);
+  --input-border:     #dde8f5;
+  --tag-bg:           #eaf1fb;
+  --icon-bg:          #eaf1fb;
+
+  --online:           #22c55e;
+  --busy:             #ef4444;
+  --away:             #94a3b8;
+  --toggle-off:       #cbd5e1;
+  --toggle-thumb:     #ffffff;
+
+  --card-shadow:      0 2px 14px rgba(59,130,246,0.07);
+  --app-shadow:       0 24px 80px rgba(30,60,114,0.18), 0 4px 20px rgba(0,0,0,0.08);
+  --modal-shadow:     0 24px 80px rgba(0,0,0,0.18);
+
+  --story-ring:       linear-gradient(135deg,#3b82f6,#6366f1,#8b5cf6);
+  --logo-icon:        linear-gradient(135deg,#3b82f6,#6366f1);
+  --avatar-border:    #ffffff;
+
+  --cover-dash-border:#c8d8ee;
+  --cover-bg:         #eaf1fb;
+  --str-empty:        #e2e8f0;
+  --session-badge-bg: #dcfce7;
+  --session-badge-fg: #16a34a;
+}
+
+/* ── DARK ──────────────────────────────────────────────────── */
+[data-theme="dark"] {
+  --app-bg:           #020617;
+  --sidebar-bg:       #0f172a;
+  --main-bg:          #1e293b;
+  --card-bg:          #0f172a;
+  --card-bg-alt:      #0a0f1e;
+  --modal-bg:         #0f172a;
+
+  --border:           #1e293b;
+  --border-inner:     #1a2744;
+  --border-danger:    #7f1d1d;
+
+  --text-primary:     #f1f5f9;
+  --text-muted:       #94a3b8;
+  --text-placeholder: #475569;
+  --text-on-accent:   #ffffff;
+
+  --accent:           #60a5fa;
+  --accent-dark:      #3b82f6;
+  --accent-dim:       rgba(96,165,250,0.12);
+  --accent-shadow:    rgba(96,165,250,0.25);
+
+  --btn-secondary-bg: rgba(96,165,250,0.12);
+  --btn-ghost-border: #1e293b;
+  --input-bg:         rgba(15,23,42,0.8);
+  --input-border:     #1e293b;
+  --tag-bg:           rgba(96,165,250,0.12);
+  --icon-bg:          rgba(96,165,250,0.1);
+
+  --online:           #22c55e;
+  --busy:             #f87171;
+  --away:             #475569;
+  --toggle-off:       #334155;
+  --toggle-thumb:     #ffffff;
+
+  --card-shadow:      0 2px 14px rgba(0,0,0,0.3);
+  --app-shadow:       0 24px 80px rgba(0,0,0,0.5), 0 4px 20px rgba(0,0,0,0.3);
+  --modal-shadow:     0 24px 80px rgba(0,0,0,0.6);
+
+  --story-ring:       linear-gradient(135deg,#3b82f6,#6366f1,#8b5cf6);
+  --logo-icon:        linear-gradient(135deg,#60a5fa,#818cf8);
+  --avatar-border:    #1e293b;
+
+  --cover-dash-border:#1e293b;
+  --cover-bg:         #0a0f1e;
+  --str-empty:        #1e293b;
+  --session-badge-bg: rgba(34,197,94,0.15);
+  --session-badge-fg: #4ade80;
+}
+
+/* ── NEON ──────────────────────────────────────────────────── */
+[data-theme="neon"] {
+  --app-bg:           #050508;
+  --sidebar-bg:       #0a0a0f;
+  --main-bg:          #0d0d16;
+  --card-bg:          #0a0a0f;
+  --card-bg-alt:      #08080d;
+  --modal-bg:         #0d0d1a;
+
+  --border:           rgba(0,245,255,0.12);
+  --border-inner:     rgba(0,245,255,0.07);
+  --border-danger:    rgba(255,45,120,0.3);
+
+  --text-primary:     #e2e8ff;
+  --text-muted:       #7c85b8;
+  --text-placeholder: #3d4270;
+  --text-on-accent:   #000000;
+
+  --accent:           #00f5ff;
+  --accent-dark:      #00bcd4;
+  --accent-dim:       rgba(0,245,255,0.08);
+  --accent-shadow:    rgba(0,245,255,0.4);
+
+  --btn-secondary-bg: rgba(0,245,255,0.08);
+  --btn-ghost-border: rgba(0,245,255,0.2);
+  --input-bg:         rgba(10,10,20,0.9);
+  --input-border:     rgba(0,245,255,0.15);
+  --tag-bg:           rgba(0,245,255,0.08);
+  --icon-bg:          rgba(0,245,255,0.08);
+
+  --online:           #39ff14;
+  --busy:             #ff2d78;
+  --away:             #3d4270;
+  --toggle-off:       #1a1a2e;
+  --toggle-thumb:     #e2e8ff;
+
+  --card-shadow:      0 2px 20px rgba(0,245,255,0.06), inset 0 0 0 1px rgba(0,245,255,0.08);
+  --app-shadow:       0 0 60px rgba(0,245,255,0.08), 0 24px 80px rgba(0,0,0,0.8);
+  --modal-shadow:     0 0 40px rgba(0,245,255,0.15), 0 24px 80px rgba(0,0,0,0.9);
+
+  --story-ring:       linear-gradient(135deg,#00f5ff,#ff2d78,#bf00ff);
+  --logo-icon:        linear-gradient(135deg,#00f5ff,#bf00ff);
+  --avatar-border:    rgba(0,245,255,0.25);
+
+  --cover-dash-border:rgba(0,245,255,0.2);
+  --cover-bg:         rgba(0,245,255,0.03);
+  --str-empty:        #1a1a2e;
+  --session-badge-bg: rgba(57,255,20,0.12);
+  --session-badge-fg: #39ff14;
+
+  /* neon-only glow tokens */
+  --neon-cyan:        #00f5ff;
+  --neon-pink:        #ff2d78;
+  --neon-purple:      #bf00ff;
+  --neon-green:       #39ff14;
+  --glow-cyan:        0 0 10px rgba(0,245,255,0.5), 0 0 30px rgba(0,245,255,0.15);
+  --glow-pink:        0 0 10px rgba(255,45,120,0.5), 0 0 30px rgba(255,45,120,0.15);
+}
+
+/* ── Neon special effects ──────────────────────────────────── */
+[data-theme="neon"] input:focus,
+[data-theme="neon"] textarea:focus,
+[data-theme="neon"] select:focus {
+  border-color: var(--accent) !important;
+  box-shadow: 0 0 0 2px rgba(0,245,255,0.15) !important;
+}
+[data-theme="neon"] .card-neon {
+  border: 1px solid var(--border);
+}
+
+/* ── Global vars consumed by all components ────────────────── */
+body { background: var(--app-bg); }

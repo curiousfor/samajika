@@ -13,7 +13,7 @@ function ConfirmModal({ type, onConfirm, onCancel }) {
       animation:'fadeIn 0.2s ease',
     }}>
       <div style={{
-        background:'#fff', borderRadius:22, padding:'28px 28px 24px',
+        background:'var(--modal-bg)', borderRadius:22, padding:'28px 28px 24px',
         width:'100%', maxWidth:420, boxShadow:'0 24px 80px rgba(0,0,0,0.22)',
         animation:'fadeUp 0.3s ease',
       }}>
@@ -44,7 +44,7 @@ function ConfirmModal({ type, onConfirm, onCancel }) {
           </label>
           <input type="password" value={password} onChange={e => setPassword(e.target.value)}
             placeholder="••••••••"
-            style={{ width:'100%', padding:'10px 14px', borderRadius:12, border:'1.5px solid #dde8f5', fontSize:14, outline:'none', fontFamily:'DM Sans,sans-serif', color:'var(--text-primary)' }} />
+            style={{ width:'100%', padding:'10px 14px', borderRadius:12, border:'1.5px solid var(--input-border)', fontSize:14, outline:'none', background:'var(--input-bg)', fontFamily:'DM Sans,sans-serif', color:'var(--text-primary)' }} />
         </div>
 
         {isDel && (
@@ -96,7 +96,7 @@ export default function DangerZone() {
         </div>
       </SectionCard>
 
-      <div style={{ background:'#fff', borderRadius:18, padding:'22px 24px', boxShadow:'0 2px 14px rgba(59,130,246,0.07)', border:'1.5px solid #fee2e2' }}>
+      <div style={{ background:'var(--card-bg)', borderRadius:18, padding:'22px 24px', boxShadow:'var(--card-shadow)', border:'1.5px solid var(--border-danger)' }}>
         <h3 style={{ fontFamily:'Syne,sans-serif', fontWeight:700, fontSize:15, color:'#dc2626', marginBottom:18, paddingBottom:12, borderBottom:'1px solid #fee2e2', display:'flex', alignItems:'center', gap:8 }}>
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
             <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
