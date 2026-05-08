@@ -1,3 +1,5 @@
+// Navbar receives unreadCount for the notification badge on the flag icon
+
 const NAV_ICONS = [
   { id: 'home', icon: (
     <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
@@ -16,7 +18,7 @@ const NAV_ICONS = [
       <polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/>
     </svg>
   )},
-  { id: 'flag', icon: (
+  { id: 'notifications', icon: (
     <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
       <path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/>
     </svg>
@@ -29,7 +31,7 @@ const NAV_ICONS = [
   )},
 ];
 
-export default function Navbar({ active, onNavChange }) {
+export default function Navbar({ active, onNavChange, unreadCount = 0 }) {
   return (
     <nav style={{
       display: 'flex', alignItems: 'center', gap: 4,
@@ -39,6 +41,7 @@ export default function Navbar({ active, onNavChange }) {
     }}>
       {NAV_ICONS.map(({ id, icon }, i) => {
         const isActive = active === id;
+        const showBadge = id === 'notifications' && unreadCount > 0 && !isActive;
         return (
           <button key={id} onClick={() => onNavChange(id)}
             style={{
@@ -48,13 +51,29 @@ export default function Navbar({ active, onNavChange }) {
               color: isActive ? 'var(--text-on-accent)' : 'var(--text-muted)',
               transition: 'all 0.22s cubic-bezier(0.4,0,0.2,1)',
               transform: isActive ? 'scale(1.08)' : 'scale(1)',
-              boxShadow: isActive ? '0 4px 14px rgba(59,130,246,0.35)' : 'none',
-              animationDelay: `${i * 0.05}s`,
+              boxShadow: isActive ? '0 4px 14px var(--accent-shadow)' : 'none',
+              position: 'relative',
             }}
-            onMouseEnter={e => { if (!isActive) { e.currentTarget.style.background='rgba(59,130,246,0.1)'; e.currentTarget.style.color='var(--accent)'; }}}
+            onMouseEnter={e => { if (!isActive) { e.currentTarget.style.background='var(--accent-dim)'; e.currentTarget.style.color='var(--accent)'; }}}
             onMouseLeave={e => { if (!isActive) { e.currentTarget.style.background='transparent'; e.currentTarget.style.color='var(--text-muted)'; }}}
           >
             {icon}
+
+            {/* Live badge on flag/notifications icon */}
+            {showBadge && (
+              <span style={{
+                position: 'absolute', top: 6, right: 'calc(50% - 18px)',
+                minWidth: 16, height: 16, borderRadius: 20,
+                background: 'var(--busy)', color: '#fff',
+                fontSize: 9, fontWeight: 700, fontFamily: 'DM Sans, sans-serif',
+                display: 'flex', alignItems: 'center', justifyContent: 'center',
+                padding: '0 4px', border: '2px solid var(--sidebar-bg)',
+                animation: 'pulse 2s infinite',
+                boxShadow: '0 0 8px rgba(239,68,68,0.5)',
+              }}>
+                {unreadCount > 9 ? '9+' : unreadCount}
+              </span>
+            )}
           </button>
         );
       })}
